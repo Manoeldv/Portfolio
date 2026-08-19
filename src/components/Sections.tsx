@@ -25,13 +25,13 @@ export const Hero = () => (
       </div>
     </div>
     <div className="col-span-1 lg:col-span-4 hidden lg:flex justify-end">
-      <div className="w-full max-w-[320px] aspect-[4/5] relative rounded-2xl overflow-hidden shadow-2xl border-4 border-border bg-[#e5e2e1] transform rotate-2 hover:rotate-0 transition-all duration-500 flex items-end justify-center">
+      <div className="w-full max-w-[320px] aspect-[4/5] relative rounded-2xl overflow-hidden shadow-2xl border-4 border-border bg-[#1a1a1a] transform rotate-2 hover:rotate-0 transition-all duration-500 flex items-end justify-center group cursor-pointer">
         <img 
           src={`${import.meta.env.BASE_URL}profile.png`} 
           alt="Manoel Dutra Vieira" 
-          className="w-[95%] h-[95%] object-cover object-bottom drop-shadow-xl grayscale hover:grayscale-0 transition-all duration-500" 
+          className="w-[95%] h-[95%] object-cover object-bottom drop-shadow-xl brightness-50 grayscale group-hover:brightness-100 group-hover:grayscale-0 transition-all duration-500" 
         />
-        <div className="absolute inset-0 shadow-[inset_0_0_50px_rgba(0,0,0,0.8),inset_0_0_100px_rgba(0,0,0,0.4)] pointer-events-none"></div>
+        <div className="absolute inset-0 shadow-[inset_0_0_80px_rgba(0,0,0,0.9),inset_0_0_120px_rgba(0,0,0,0.7)] pointer-events-none transition-opacity duration-500 group-hover:opacity-50"></div>
       </div>
     </div>
   </section>
