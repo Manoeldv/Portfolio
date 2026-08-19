@@ -224,8 +224,8 @@ export const Process = () => {
   return (
     <section className="max-w-6xl mx-auto px-6 w-full py-16">
       <SectionHeader title="Como eu Trabalho" />
-      <div className="bg-surface ghost-border p-8 rounded-lg overflow-x-auto">
-        <div className="flex items-center min-w-[800px] justify-between">
+      <div className="bg-surface ghost-border p-8 rounded-lg">
+        <div className="flex flex-col lg:flex-row items-center lg:items-start justify-between gap-4 lg:gap-0">
           {steps.map((step, i) => (
             <React.Fragment key={i}>
               <div className="flex flex-col items-center gap-2 w-24">
@@ -236,11 +236,20 @@ export const Process = () => {
                 `}>
                   {step.icon}
                 </div>
-                <span className={`font-mono text-[10px] uppercase tracking-wider ${step.color}`}>{step.label}</span>
+                <span className={`font-mono text-[10px] uppercase tracking-wider text-center ${step.color}`}>{step.label}</span>
               </div>
+              
+              {/* Linha Horizontal (Desktop) */}
               {i < steps.length - 1 && (
-                <div className="h-[1px] flex-grow bg-border mx-2 relative">
+                <div className="hidden lg:flex h-[1px] flex-grow bg-border mx-2 relative mt-5">
                   <div className="absolute right-0 -top-[3px] w-2 h-2 border-t border-r border-border rotate-45"></div>
+                </div>
+              )}
+              
+              {/* Linha Vertical (Mobile) */}
+              {i < steps.length - 1 && (
+                <div className="flex lg:hidden w-[1px] h-8 bg-border relative">
+                  <div className="absolute bottom-0 -left-[3px] w-2 h-2 border-b border-r border-border rotate-45"></div>
                 </div>
               )}
             </React.Fragment>
