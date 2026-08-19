@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', sans-serif;
+  --font-display: 'Geist', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --color-background: #131313;
+  --color-surface: #201f1f;
+  --color-surface-hover: #2a2a2a;
+  --color-border: #353534;
+  --color-border-hover: #494454;
+  --color-primary: #a078ff;
+  --color-primary-dark: #6d3bd7;
+  --color-secondary: #ffe083;
+  
+  --color-text-main: #e5e2e1;
+  --color-text-muted: #a3a3a3;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-text-main font-sans antialiased;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: #131313; }
+  ::-webkit-scrollbar-thumb { background: #353534; border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: #494454; }
+}
+
+@layer components {
+  .ghost-border {
+    @apply border border-border;
+  }
+  .btn-primary {
+    @apply bg-primary-dark text-text-main px-6 py-2 rounded transition-all duration-200 font-semibold hover:bg-primary hover:-translate-y-0.5 inline-flex items-center gap-2 justify-center text-sm md:text-base;
+  }
+  .btn-secondary {
+    @apply bg-transparent border border-border-hover text-text-main px-6 py-2 rounded transition-all duration-200 hover:bg-surface hover:-translate-y-0.5 inline-flex items-center gap-2 justify-center text-sm md:text-base;
+  }
+  .chip {
+    @apply font-mono text-[13px] bg-[#262626] border border-primary/30 rounded px-3 py-1 text-primary inline-block mb-2 mr-2 transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary/20 hover:border-primary hover:shadow-sm cursor-default;
+  }
+}
