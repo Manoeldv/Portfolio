@@ -27,7 +27,7 @@ export const Hero = () => (
     <div className="col-span-1 lg:col-span-4 hidden lg:flex justify-end">
       <div className="w-full max-w-[320px] aspect-[4/5] relative rounded-2xl overflow-hidden shadow-2xl border-4 border-border bg-[#e5e2e1] transform rotate-2 hover:rotate-0 transition-all duration-500 flex items-end justify-center">
         <img 
-          src="/profile.png" 
+          src={`${import.meta.env.BASE_URL}profile.png`} 
           alt="Manoel Dutra Vieira" 
           className="w-[95%] h-[95%] object-cover object-bottom drop-shadow-xl grayscale hover:grayscale-0 transition-all duration-500" 
         />
